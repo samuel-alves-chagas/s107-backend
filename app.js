@@ -6,7 +6,7 @@ let port = 5000;
 const cors=require('cors');
 
 const mongoose = require('mongoose');
-const uri = `mongodb://root:example@localhost:27017`;
+const uri = `mongodb://root:example@0.0.0.0:27017`;
 mongoose.connect(uri);
 
 mongoose.connection.on('connected', function () {
