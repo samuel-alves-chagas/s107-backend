@@ -1,12 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-let port = 5000;
+let port = 5001;
 
 const cors=require('cors');
 
 const mongoose = require('mongoose');
-const uri = `mongodb://root:example@0.0.0.0:27017`;
+const uri = `mongodb://root:example@localhost:27017/?authMechanism=DEFAULT`;
 mongoose.connect(uri);
 
 mongoose.connection.on('connected', function () {
