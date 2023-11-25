@@ -34,8 +34,8 @@ const LoginSchema = new Schema({
 
 const Login = mongoose.model('Login', LoginSchema);
 
-app.post('/login', function(req, res, next){
-  Login.create(req.body).then(function(login){
+app.post('/login', async function(req, res, next){
+  await Login.create(req.body).then(function(login){
     res.send({id: login['_id']});
   }).catch((err) => {
     console.log(err)
@@ -43,8 +43,8 @@ app.post('/login', function(req, res, next){
   });
 });
 
-app.get('/verificacao/:id', function(req, res, next){
-  Login.find({_id: req.params.id}).then(function(login){
+app.get('/verificacao/:id', async function(req, res, next){
+  await Login.find({_id: req.params.id}).then(function(login){
     res.send(login);
   }).catch(next);
 });
