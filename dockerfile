@@ -5,7 +5,8 @@ FROM node:18
 WORKDIR /app
 
 # Clone o repositório do GitHub para a imagem
-COPY . .
+RUN git clone https://github.com/samuel-alves-chagas/s107-backend .
+
 # Instale as dependências
 RUN npm install
 
